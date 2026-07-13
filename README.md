@@ -1,0 +1,2 @@
+# BidirectionalEmergencyCommunicationSystem
+AI-Powered Bidirectional Emergency Communication System for Individuals with Hearing Impairments
