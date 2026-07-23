@@ -216,3 +216,7 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+model2/best-emergency-simplifier/
+model2/best-emergency-simplifier-20260723T054413Z-1-001.zip
