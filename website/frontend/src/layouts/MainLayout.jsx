@@ -9,7 +9,7 @@ const TOPBAR_HEIGHT = 70;
 
 function MainLayout() {
   return (
-    <Box sx={{ display: "flex", height: "100vh" }}>
+    <Box sx={{ display: "flex", height: "100vh", overflow: "hidden" }}>
       {/* Sidebar */}
       <Sidebar width={SIDEBAR_WIDTH} />
 
@@ -19,7 +19,7 @@ function MainLayout() {
           flexGrow: 1,
           display: "flex",
           flexDirection: "column",
-          ml: `${SIDEBAR_WIDTH}px`,
+          backgroundColor: "#f8fafc", /* Moved background color here so it covers the whole right side uniformly */
         }}
       >
         {/* Top Navigation */}
@@ -30,10 +30,8 @@ function MainLayout() {
           component="main"
           sx={{
             flexGrow: 1,
-            mt: `${TOPBAR_HEIGHT}px`,
-            p: 3,
+            /* REMOVED p: 3 here to eliminate the double-padding misalignment */
             overflowY: "auto",
-            backgroundColor: "background.default",
           }}
         >
           <Outlet />

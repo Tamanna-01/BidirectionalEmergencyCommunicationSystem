@@ -7,65 +7,96 @@ const pageTitles = {
   "/gesture-detection": "Gesture Detection",
 };
 
-function Topbar({ sidebarWidth, height }) {
+function Topbar({ height }) {
   const location = useLocation();
-
   const title = pageTitles[location.pathname] || "EchoSafe";
 
   return (
-    <AppBar
-      position="fixed"
-      elevation={0}
-      sx={{
-        width: `calc(100% - ${sidebarWidth}px)`,
-        ml: `${sidebarWidth}px`,
-        height,
-        justifyContent: "center",
-        borderBottom: "1px solid",
-        borderColor: "divider",
-        backgroundColor: "background.paper",
-      }}
-    >
-      <Toolbar
+    /* Changed px: 3, pt: 3 to p: 3 to add equal padding on all sides, including the bottom */
+    <Box sx={{ p: 3 }}> 
+      <AppBar
+        position="static"
+        elevation={0}
         sx={{
-          height: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
+          height,
+          justifyContent: "center",
+          backgroundColor: "#ffffff",
+          border: "1px solid #e2e8f0",
+          borderRadius: "18px", 
+          color: "#1e293b",
+          boxShadow: "0 4px 6px rgba(0, 0, 0, 0.02)",
         }}
       >
-        <Box>
-          <Typography variant="h5" fontWeight={600}>
-            {title}
-          </Typography>
-
-          <Typography variant="body2" color="text.secondary">
-            AI Emergency Communication Platform
-          </Typography>
-        </Box>
-
-        <Box
+        <Toolbar
           sx={{
+            height: "100%",
             display: "flex",
+            justifyContent: "space-between",
             alignItems: "center",
-            gap: 1,
+            px: { xs: 2, sm: 3 },
           }}
         >
+          <Box>
+            <Typography 
+              variant="h5" 
+              sx={{ 
+                fontWeight: 700, 
+                letterSpacing: "-0.01em",
+                fontFamily: "system-ui, -apple-system, sans-serif"
+              }}
+            >
+              {title}
+            </Typography>
+
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                color: "#6b7280",
+                fontWeight: 500,
+                mt: 0.25 
+              }}
+            >
+              AI Emergency Communication Platform
+            </Typography>
+          </Box>
+
           <Box
             sx={{
-              width: 10,
-              height: 10,
-              borderRadius: "50%",
-              bgcolor: "success.main",
+              display: "flex",
+              alignItems: "center",
+              gap: 1.25,
+              backgroundColor: "#f0fdf4",
+              border: "1px solid #bbf7d0",
+              padding: "6px 16px",
+              borderRadius: "30px",
             }}
-          />
+          >
+            <Box
+              sx={{
+                width: 8,
+                height: 8,
+                borderRadius: "50%",
+                bgcolor: "#16a34a",
+                boxShadow: "0 0 8px rgba(22, 163, 74, 0.4)",
+              }}
+            />
 
-          <Typography variant="body2" color="text.secondary">
-            System Ready
-          </Typography>
-        </Box>
-      </Toolbar>
-    </AppBar>
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                color: "#166534", 
+                fontWeight: 600,
+                fontSize: "0.85rem",
+                textTransform: "uppercase",
+                letterSpacing: "0.03em"
+              }}
+            >
+              System Ready
+            </Typography>
+          </Box>
+        </Toolbar>
+      </AppBar>
+    </Box>
   );
 }
 

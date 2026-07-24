@@ -44,7 +44,8 @@ function Sidebar({ width }) {
         "& .MuiDrawer-paper": {
           width,
           boxSizing: "border-box",
-          borderRight: "1px solid #E5E7EB",
+          borderRight: "1px solid #e2e8f0", // Matches the light theme borders
+          backgroundColor: "#ffffff",
         },
       }}
     >
@@ -53,22 +54,43 @@ function Sidebar({ width }) {
         sx={{
           py: 4,
           px: 3,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
           textAlign: "center",
         }}
       >
-        <Typography variant="h4" color="primary" fontWeight={700}>
-          🛡 EchoSafe
+        <Typography 
+          variant="h5" 
+          fontWeight={800} 
+          sx={{ 
+            color: "#1e293b", 
+            letterSpacing: "-0.02em",
+            display: "flex",
+            alignItems: "center",
+            gap: 1
+          }}
+        >
+          <span style={{ color: "#3b82f6", fontSize: "1.2em" }}>🛡</span> EchoSafe
         </Typography>
 
-        <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+        <Typography 
+          variant="caption" 
+          sx={{ 
+            mt: 1.5, 
+            color: "#6b7280",
+            lineHeight: 1.6,
+            fontWeight: 500
+          }}
+        >
           AI Emergency Communication Platform
         </Typography>
       </Box>
 
-      <Divider />
+      <Divider sx={{ borderColor: "#f1f5f9", mb: 2, mx: 3 }} />
 
       {/* Navigation */}
-      <List sx={{ mt: 2, px: 2 }}>
+      <List sx={{ px: 2, display: "flex", flexDirection: "column", gap: 0.5 }}>
         {menuItems.map((item) => (
           <NavLink
             key={item.path}
@@ -76,32 +98,45 @@ function Sidebar({ width }) {
             style={{
               textDecoration: "none",
               color: "inherit",
+              display: "block"
             }}
           >
             {({ isActive }) => (
               <ListItemButton
                 sx={{
-                  mb: 1,
-                  borderRadius: 2,
-                  backgroundColor: isActive ? "primary.main" : "transparent",
-
-                  color: isActive ? "white" : "text.primary",
-
+                  borderRadius: "12px",
+                  py: 1.25,
+                  px: 2.5,
+                  mb: 0.5,
+                  backgroundColor: isActive ? "#3b82f6" : "transparent",
+                  color: isActive ? "#ffffff" : "#475569",
+                  transition: "all 0.2s ease",
+                  boxShadow: isActive ? "0 4px 14px rgba(59, 130, 246, 0.4)" : "none",
+                  
                   "&:hover": {
-                    backgroundColor: isActive ? "primary.dark" : "#EEF4FF",
+                    backgroundColor: isActive ? "#2563eb" : "#f8fafc",
+                    transform: isActive ? "translateY(-2px)" : "none",
                   },
                 }}
               >
                 <ListItemIcon
                   sx={{
-                    color: isActive ? "white" : "primary.main",
+                    color: isActive ? "#ffffff" : "#64748b",
                     minWidth: 40,
+                    transition: "color 0.2s ease",
                   }}
                 >
                   {item.icon}
                 </ListItemIcon>
 
-                <ListItemText primary={item.text} />
+                <ListItemText 
+                  primary={item.text} 
+                  primaryTypographyProps={{ 
+                    fontWeight: isActive ? 700 : 500,
+                    fontSize: "0.95rem",
+                    fontFamily: 'system-ui, -apple-system, sans-serif'
+                  }} 
+                />
               </ListItemButton>
             )}
           </NavLink>
