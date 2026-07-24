@@ -1,17 +1,14 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from routes.health import router as health_router
-
 from routes.detect import router as detect_router
-
-from services.model_loader import load_models
-
 from routes.transcribe import router as transcribe_router
-
 from routes.process_audio import router as process_audio_router
 
+from services.model_loader import load_models
 
 
 @asynccontextmanager
@@ -32,6 +29,21 @@ app = FastAPI(
     description="AI Powered Emergency Communication System",
     lifespan=lifespan
 )
+
+# ---------------- CORS ---------------- #
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# -------------- Routers --------------- #
 
 app.include_router(health_router)
 app.include_router(detect_router)

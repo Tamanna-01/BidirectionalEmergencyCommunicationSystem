@@ -1,0 +1,268 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 20px;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* Hero */
+.hero-section {
+  position: relative;
+  overflow: hidden;
+  padding: 70px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #1565c0 0%, #512da8 100%);
+  color: white;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  width: 450px;
+  height: 450px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  right: -150px;
+  top: -120px;
+}
+
+.hero-section::after {
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  left: -80px;
+  bottom: -80px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  max-width: 900px;
+  margin-bottom: 18px;
+  opacity: 0.95;
+}
+
+.hero-description {
+  max-width: 850px;
+  line-height: 1.9;
+  font-size: 17px;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+/* Sections */
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1e293b;
+}
+
+.section-subtitle {
+  color: #6b7280;
+  margin-bottom: 30px;
+  line-height: 1.8;
+  font-size: 1.1rem;
+}
+
+/* Cards */
+.info-card {
+  height: 100%;
+  border-radius: 18px;
+  transition: all 0.25s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eef4ff;
+  margin-bottom: 18px;
+  font-size: 28px;
+}
+
+.feature-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.feature-description {
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Workflow */
+.workflow-card {
+  border-radius: 20px;
+  padding: 32px;
+}
+
+.workflow-text {
+  font-family: "Consolas", monospace;
+  font-size: 17px;
+  line-height: 2;
+  white-space: pre-line;
+}
+
+/* Tech Stack */
+.tech-chip {
+  margin: 6px;
+}
+
+/* CTA */
+.cta-section {
+  border-radius: 24px;
+  padding: 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  color: white;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.cta-description {
+  max-width: 700px;
+  margin: auto;
+  opacity: 0.9;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 40px 28px;
+  }
+
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-section {
+    padding: 36px 24px;
+  }
+}
+
+/* --- Added Layout Classes to support the HTML structure --- */
+.content-section {
+  width: 100%;
+}
+
+.cards-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 32px;
+}
+
+.cards-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.light-bg {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.white-bg {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.list-spaced {
+  padding-left: 24px;
+  margin: 0;
+}
+
+.list-spaced li {
+  margin-bottom: 12px;
+}
+
+/* --- CTA Buttons --- */
+.cta-buttons {
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.primary-btn,
+.secondary-btn {
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.primary-btn {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.4);
+}
+
+.primary-btn:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.secondary-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+}
