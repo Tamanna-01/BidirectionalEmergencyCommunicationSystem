@@ -217,7 +217,15 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
+model1
+model2
+flant_model_local
+whispermodel
 
+backend.zip
+
+website/frontend/src.zip
+=======
 model2/best-emergency-simplifier/
 model2/best-emergency-simplifier-20260723T054413Z-1-001.zip
 
