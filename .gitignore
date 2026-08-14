@@ -217,7 +217,6 @@ __marimo__/
 # Streamlit
 .streamlit/secrets.toml
 
-
 model1
 model2
 flant_model_local
@@ -226,3 +225,20 @@ whispermodel
 backend.zip
 
 website/frontend/src.zip
+=======
+model2/best-emergency-simplifier/
+model2/best-emergency-simplifier-20260723T054413Z-1-001.zip
+
+model3/venv
+model3/action.h5
+model3/action.keras
+model3/actionNew.h5
+model3/*.png
+model3/*.mp4
+model3/train_model2.py
+
+documentation/
+flant_model_local/
+whispermodel
+
+website/frontend/node_modules/
