@@ -9,11 +9,11 @@ router = APIRouter()
 def health():
 
     return {
-
         "status": "running",
 
         "model1_loaded": ModelManager.model1_loaded,
 
-        "model2_loaded": ModelManager.model2_loaded
+        "model2_loaded": ModelManager.model2_loaded,
 
+        "model3_loaded": ModelManager.model3_loaded,
     }

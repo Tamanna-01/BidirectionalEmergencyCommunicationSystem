@@ -242,3 +242,6 @@ flant_model_local/
 whispermodel
 
 website/frontend/node_modules/
+
+website/*.zip
+website/* - Copy/

@@ -7,6 +7,7 @@ from routes.health import router as health_router
 from routes.detect import router as detect_router
 from routes.transcribe import router as transcribe_router
 from routes.process_audio import router as process_audio_router
+from routes.gesture import router as gesture_router
 
 from services.model_loader import load_models
 
@@ -30,6 +31,7 @@ app = FastAPI(
     lifespan=lifespan
 )
 
+
 # ---------------- CORS ---------------- #
 
 app.add_middleware(
@@ -43,12 +45,18 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 # -------------- Routers --------------- #
 
 app.include_router(health_router)
+
 app.include_router(detect_router)
+
 app.include_router(transcribe_router)
+
 app.include_router(process_audio_router)
+
+app.include_router(gesture_router)
 
 
 @app.get("/")
