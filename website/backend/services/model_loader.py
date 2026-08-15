@@ -7,7 +7,8 @@ from faster_whisper import WhisperModel
 from core.config import (
     MODEL1_PATH,
     CLASS_NAMES_PATH,
-    WHISPER_MODEL_DIR
+    WHISPER_MODEL_DIR,
+    GESTURE_MODEL_PATH,
 )
 
 from core.model_manager import ModelManager
@@ -32,7 +33,7 @@ def load_models():
     print("✓ YAMNet Loaded")
 
     # -------------------------------------------------------
-    # Emergency Classifier
+    # Emergency Classifier - Model 1
     # -------------------------------------------------------
 
     print("=" * 60)
@@ -70,10 +71,47 @@ def load_models():
     print("✓ Whisper Loaded")
 
     # -------------------------------------------------------
-    # FLAN-T5
+    # FLAN-T5 - Model 2
     # -------------------------------------------------------
 
+    print("=" * 60)
+    print("Loading FLAN-T5...")
+
     load_flan_model()
+
+    ModelManager.model2_loaded = True
+
+    print("✓ FLAN-T5 Loaded")
+
+    # -------------------------------------------------------
+    # ISL Gesture Recognition - Model 3
+    # -------------------------------------------------------
+
+    print("=" * 60)
+    print("Loading ISL Gesture Recognition Model...")
+
+    ModelManager.gesture_model = tf.keras.models.load_model(
+        GESTURE_MODEL_PATH,
+        compile=False,
+    )
+
+    ModelManager.model3_loaded = True
+
+    print("✓ ISL Gesture Recognition Model Loaded")
+
+    print(
+        f"✓ Gesture Model Input Shape: "
+        f"{ModelManager.gesture_model.input_shape}"
+    )
+
+    print(
+        f"✓ Gesture Model Output Shape: "
+        f"{ModelManager.gesture_model.output_shape}"
+    )
+
+    # -------------------------------------------------------
+    # Complete
+    # -------------------------------------------------------
 
     print("=" * 60)
     print("All AI Models Loaded Successfully!")

@@ -1,0 +1,563 @@
+/* ============================================================
+   GestureDetection.css
+   EchoSafe Light Theme
+   Matches Audio Detection styling
+============================================================ */
+
+.gesture-page {
+  min-height: calc(100vh - 80px);
+  padding: 24px;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.gesture-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.gesture-eyebrow {
+  color: #1565c0;
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em;
+  margin-bottom: 6px !important;
+}
+
+.gesture-title {
+  margin: 0 !important;
+  color: #1e293b;
+  font-weight: 700 !important;
+}
+
+.gesture-subtitle {
+  margin-top: 6px !important;
+  color: #64748b;
+  font-size: 15px !important;
+}
+
+.gesture-status {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+}
+
+.status-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #94a3b8;
+}
+
+.status-dot.active {
+  background: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+/* ============================================================
+   ALERT
+============================================================ */
+
+.gesture-alert {
+  margin-bottom: 20px;
+  border-radius: 12px !important;
+}
+
+/* ============================================================
+   MAIN GRID
+============================================================ */
+
+.gesture-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(340px, 0.8fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+/* ============================================================
+   CARDS
+============================================================ */
+
+.gesture-card,
+.supported-card {
+  background: #ffffff !important;
+  border: 1px solid #e2e8f0 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02) !important;
+  transition: all 0.25s ease !important;
+}
+
+.gesture-card:hover,
+.supported-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+.gesture-card .MuiCardContent-root,
+.supported-card .MuiCardContent-root {
+  padding: 24px !important;
+}
+
+.card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.card-label {
+  color: #6b7280;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em;
+  margin-bottom: 5px !important;
+}
+
+.card-title {
+  color: #1e293b;
+  font-weight: 700 !important;
+}
+
+/* ============================================================
+   CAMERA
+============================================================ */
+
+.camera-container {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #0f172a;
+  border: 1px solid #e2e8f0;
+}
+
+.camera-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.camera-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #94a3b8;
+  text-align: center;
+  padding: 24px;
+}
+
+.camera-placeholder svg {
+  font-size: 54px;
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.camera-placeholder p:first-of-type {
+  color: #e2e8f0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.camera-placeholder p:last-of-type {
+  color: #94a3b8;
+}
+
+/* ============================================================
+   RECORDING
+============================================================ */
+
+.recording-indicator {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 11px;
+  border-radius: 30px;
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.recording-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  animation: recording-pulse 1s infinite;
+}
+
+.recording-overlay {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 2;
+}
+
+.recording-timer {
+  min-width: 48px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: rgba(15, 23, 42, 0.85);
+  color: #ffffff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 700;
+  backdrop-filter: blur(8px);
+}
+
+/* ============================================================
+   BUTTONS
+============================================================ */
+
+.camera-actions {
+  margin-top: 18px;
+}
+
+.primary-button {
+  background: #3b82f6 !important;
+  color: #ffffff !important;
+  border-radius: 12px !important;
+  padding: 11px 20px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35) !important;
+}
+
+.primary-button:hover {
+  background: #2563eb !important;
+  transform: translateY(-2px);
+}
+
+.secondary-button {
+  color: #475569 !important;
+  border-color: #cbd5e1 !important;
+  border-radius: 12px !important;
+  padding: 11px 20px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+.secondary-button:hover {
+  background: #f8fafc !important;
+}
+
+.stop-button {
+  border-radius: 12px !important;
+  padding: 11px 20px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+
+.speak-button {
+  margin-top: 16px !important;
+  border-color: #93c5fd !important;
+  color: #1565c0 !important;
+  border-radius: 12px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
+}
+
+/* ============================================================
+   PROCESSING
+============================================================ */
+
+.processing-state {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.processing-state .MuiCircularProgress-root {
+  color: #3b82f6;
+  margin-bottom: 22px;
+}
+
+.processing-title {
+  color: #1e293b;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+}
+
+.processing-text {
+  max-width: 360px;
+  color: #64748b;
+  line-height: 1.7 !important;
+}
+
+/* ============================================================
+   RESULT
+============================================================ */
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gesture-result-box {
+  padding: 22px;
+  border-radius: 14px;
+  background: #eef4ff;
+  border: 1px solid #bfdbfe;
+  text-align: center;
+}
+
+.result-label {
+  color: #6b7280;
+  font-size: 11px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em;
+  margin-bottom: 7px !important;
+}
+
+.detected-gesture {
+  color: #1565c0;
+  font-size: 28px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.confidence-section {
+  padding: 2px 0;
+}
+
+.confidence-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.confidence-header p:last-child {
+  color: #1565c0;
+  font-weight: 700;
+}
+
+.confidence-bar {
+  height: 9px !important;
+  border-radius: 20px !important;
+  background: #e2e8f0 !important;
+}
+
+.confidence-bar .MuiLinearProgress-bar {
+  border-radius: 20px;
+  background: linear-gradient(135deg, #1565c0 0%, #512da8 100%);
+}
+
+.message-section {
+  padding-top: 2px;
+}
+
+.gesture-message {
+  padding: 18px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  color: #1e293b;
+  font-size: 18px !important;
+  font-weight: 600 !important;
+  line-height: 1.7 !important;
+}
+
+.processing-time {
+  color: #94a3b8 !important;
+  text-align: right;
+}
+
+.low-confidence-alert {
+  border-radius: 12px !important;
+}
+
+/* ============================================================
+   EMPTY RESULT
+============================================================ */
+
+.empty-result {
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+}
+
+.empty-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: #eef4ff;
+  color: #3b82f6;
+}
+
+.empty-icon svg {
+  font-size: 30px;
+}
+
+.empty-title {
+  color: #1e293b;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  margin-bottom: 7px !important;
+}
+
+.empty-text {
+  max-width: 330px;
+  color: #64748b;
+  line-height: 1.7 !important;
+}
+
+/* ============================================================
+   SUPPORTED GESTURES
+============================================================ */
+
+.supported-card {
+  margin-top: 24px;
+}
+
+.gesture-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.supported-gesture {
+  padding: 16px;
+  border-radius: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.supported-gesture:hover {
+  background: #eef4ff;
+  border-color: #bfdbfe;
+  transform: translateY(-2px);
+}
+
+.supported-gesture p:first-child {
+  color: #1e293b;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  margin-bottom: 5px !important;
+}
+
+.supported-gesture p:last-child {
+  color: #64748b;
+  line-height: 1.5 !important;
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+
+@keyframes recording-pulse {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.45;
+    transform: scale(0.75);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1000px) {
+  .gesture-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .camera-container {
+    height: 420px;
+  }
+}
+
+@media (max-width: 700px) {
+  .gesture-page {
+    padding: 16px;
+  }
+
+  .gesture-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .gesture-status {
+    align-self: flex-start;
+  }
+
+  .camera-container {
+    height: 320px;
+  }
+
+  .gesture-list {
+    grid-template-columns: 1fr;
+  }
+
+  .detected-gesture {
+    font-size: 23px !important;
+  }
+
+  .camera-actions {
+    flex-direction: column !important;
+  }
+
+  .camera-actions button {
+    width: 100%;
+  }
+}

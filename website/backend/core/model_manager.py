@@ -4,7 +4,7 @@ class ModelManager:
     """
 
     # -----------------------------
-    # Model 1
+    # Model 1 - Emergency Detection
     # -----------------------------
     yamnet = None
     emergency_classifier = None
@@ -16,10 +16,15 @@ class ModelManager:
     whisper = None
 
     # -----------------------------
-    # Model 2
+    # Model 2 - FLAN-T5
     # -----------------------------
     flan_model = None
     flan_tokenizer = None
+
+    # -----------------------------
+    # Model 3 - ISL Gesture Recognition
+    # -----------------------------
+    gesture_model = None
 
     # -----------------------------
     # Status
@@ -27,3 +32,4 @@ class ModelManager:
     model1_loaded = False
     whisper_loaded = False
     model2_loaded = False
+    model3_loaded = False
